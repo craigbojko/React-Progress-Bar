@@ -1,0 +1,130 @@
+/*
+* @Author: Craig Bojko
+* @Date:   2018-01-14 22:15:59
+* @Last Modified by:   Craig Bojko
+* @Last Modified time: 2018-01-15 01:49:32
+*/
+
+@ROOT_SRC: '/<src-path-error-message>/';
+
+@import '@{ROOT_SRC}/app/styles/mixins.less';
+
+.progessIcon {
+  position: relative;
+  display: inline-block;
+  min-width: 65px;
+  margin: 15px @icon-margin-side;
+  vertical-align: top;
+
+  @media @col-sm {
+    margin: 15px @icon-margin-side-full;
+    padding-bottom: @icon-size;
+  }
+
+  p {
+    text-align: center;
+    font-weight: bold;
+    color: @grey;
+
+    transition: all 1s ease;
+    transition-delay: 1s;
+  }
+
+  &.left {
+    margin-left: 0;
+  }
+  &.center {
+    
+  }
+  &.right {
+    margin-right: 0;
+  }
+
+  .progressIcon-marker {
+    width: @icon-size;
+    height: @icon-size;
+    margin: 0 auto;
+
+    cursor: pointer;
+    border: solid 2px @grey;
+    background: @grey;
+    border-radius: 50%;
+    text-align: center;
+    transition: all 1s ease;
+    transition-delay: 1s;
+
+    span {
+      background: @white;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      position: relative;
+      display: block;
+      top: 5px;
+      left: 5px;
+
+      &::before {
+        content: "";
+      }
+    }
+  }
+
+  .progressConnector {
+    position: absolute;
+    display: inline-block;
+    width: 1px;
+    top: 0;
+    left: 0;
+
+
+    &::before,
+    &::after {
+      content: " ";
+      
+      position: absolute;
+      top: (@icon-size) + 12;
+      left: -38px; // 0 - (@icon-size);
+      width: 55px;
+
+      background: transparent;
+      border-bottom: solid 5px @grey;
+
+      @media @col-sm {
+        left: -118px;
+        width: 135px; // (@icon-margin-side-full * 3) - 1;
+      }
+    }
+
+    &::after {
+      width: 0;
+      border-bottom: solid 5px @blue;
+      transition: all 1s ease;
+    }
+  }
+
+
+  &[data-active="true"],
+  &[data-complete="true"] {
+    p {
+      color: blue;
+    }
+
+    .progressIcon-marker {
+      background-color: @blue;
+      border-color: @blue;
+    }
+
+    .progressConnector {
+      &::before {
+        // border-bottom: solid 5px @blue;
+      }
+      &::after {
+        width: 55px;
+
+        @media @col-sm {
+          width: 138px;
+        }
+      }
+    }
+  }
+}
