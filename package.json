@@ -1,6 +1,7 @@
 {
   "name": "react_navigation_progress",
   "version": "1.0.0",
+  "fullname": "React Navigation Progress Bar",
   "description": "Package Builds a navigation progress bar which shows steps within the funnel.",
   "main": "src/index.js",
   "directories": {
@@ -8,7 +9,7 @@
   },
   "scripts": {
     "bootstrap": "npm i && npm run build",
-    "test": "npm run build && find ./src -name '*spec.js' | xargs mocha -R spec -r jsdom-global/register",
+    "test": "NODE_ENV=test find ./src -name '*spec.jsx' | xargs mocha -R spec",
     "build": "webpack --progress",
     "start": "babel src --out-dir build && node build/index $ENV",
     "serve": "http-server . -a localhost -p 8080",
@@ -28,6 +29,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-webpack-aliases": "^1.1.3",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -37,6 +39,12 @@
     "cheerio": "^1.0.0-rc.2",
     "css-loader": "^0.28.8",
     "dirty-chai": "^2.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.17.0",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-react": "^7.6.1",
+    "ignore-styles": "^5.0.1",
     "jsdom": "11.5.1",
     "jsdom-global": "3.0.2",
     "less": "^2.7.3",
@@ -44,6 +52,10 @@
     "mocha": "^4.1.0",
     "postcss-loader": "^2.0.10",
     "precss": "^2.0.0",
+    "react-dom": "^16.2.0",
+    "react-test-renderer": "^16.2.0",
+    "sinon": "^4.3.0",
+    "sinon-chai": "^2.14.0",
     "smart-banner-webpack-plugin": "^3.0.1",
     "style-loader": "^0.19.1",
     "underscore-template-loader": "^0.8.0",
@@ -59,5 +71,17 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "redux": "^3.7.2"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "context",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "it",
+      "expect"
+    ]
   }
 }

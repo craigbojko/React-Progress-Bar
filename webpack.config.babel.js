@@ -1,9 +1,16 @@
-/*
-* @Author: Craig Bojko
-* @Date:   2018-01-14 18:08:07
-* @Last Modified by:   Craig Bojko
-* @Last Modified time: 2018-01-14 23:54:03
-*/
+/**
+ * Project: react_navigation_progress
+ * FilePath: /webpack.config.babel.js
+ * File: webpack.config.babel.js
+ * Created Date: Sunday, January 14th 2018, 5:50:40 pm
+ * Author: Craig Bojko
+ * -----
+ * Last Modified: Thu Feb 15 2018
+ * Modified By: Craig Bojko
+ * -----
+ * Copyright (c) 2018 Pixel Ventures Ltd.
+ * ------------------------------------
+ */
 
 import 'colors'
 import npmPackage from './package.json'
@@ -65,7 +72,8 @@ export default {
   devtool: 'cheap-module-source-map', // source-map | eval-source-map
   resolve: {
     alias: {
-      '@moteefe': ROOT_SRC
+      '@moteefe': ROOT_SRC,
+      '@test': path.join(__dirname, './test')
     },
     modules: [
       ROOT_SRC,
@@ -120,6 +128,5 @@ export default {
         ]
       }
     ]
-  },
-  externals: {}
+  }
 }
