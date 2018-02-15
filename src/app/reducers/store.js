@@ -1,9 +1,16 @@
-/*
-* @Author: Craig Bojko
-* @Date:   2018-01-14 17:14:28
-* @Last Modified by:   Craig Bojko
-* @Last Modified time: 2018-01-15 02:20:06
-*/
+/**
+ * Project: react_navigation_progress
+ * FilePath: /src/app/reducers/store.js
+ * File: store.js
+ * Created Date: Sunday, January 14th 2018, 5:14:27 pm
+ * Author: Craig Bojko
+ * -----
+ * Last Modified: Thu Feb 15 2018
+ * Modified By: Craig Bojko
+ * -----
+ * Copyright (c) 2018 Pixel Ventures Ltd.
+ * ------------------------------------
+ */
 
 import { combineReducers } from 'redux'
 

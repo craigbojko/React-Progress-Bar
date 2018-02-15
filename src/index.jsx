@@ -1,9 +1,16 @@
-/*
-* @Author: Craig Bojko
-* @Date:   2018-01-12 09:52:42
-* @Last Modified by:   Craig Bojko
-* @Last Modified time: 2018-01-15 03:38:06
-*/
+/**
+ * Project: react_navigation_progress
+ * FilePath: /src/index.jsx
+ * File: index.jsx
+ * Created Date: Wednesday, January 10th 2018, 5:05:36 pm
+ * Author: Craig Bojko
+ * -----
+ * Last Modified: Thu Feb 15 2018
+ * Modified By: Craig Bojko
+ * -----
+ * Copyright (c) 2018 Pixel Ventures Ltd.
+ * ------------------------------------
+ */
 
 import 'colors'
 import Logger from '@moteefe/app/logger'
@@ -12,9 +19,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { reduxStore } from '@moteefe/app/reducers/store'
-import NavigationProvider from '@moteefe/app/navigationProvider.provider.jsx'
-import NavigationProgress from '@moteefe/app/components/NavigationProgress/navigationProgress.component.jsx'
-import NavigationIncrement from '@moteefe/app/components/NavigationIncrement/navigationIncrement.component.jsx'
+import { NavigationProvider } from '@moteefe/app/navigationProvider.provider.jsx'
+import { NavigationProgress } from '@moteefe/app/components/NavigationProgress/navigationProgress.component.jsx'
+import { NavigationIncrement } from '@moteefe/app/components/NavigationIncrement/navigationIncrement.component.jsx'
 
 import * as config from '@moteefe/app/config.json'
 
@@ -102,4 +109,6 @@ function renderReactComponents (reduxModel) {
 
 // Export primary function and run
 export default init
-init(config.steps)
+if (process.env.NODE_ENV !== 'test') {
+  init(config.steps)
+}

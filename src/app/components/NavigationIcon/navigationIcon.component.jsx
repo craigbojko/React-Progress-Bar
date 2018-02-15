@@ -1,9 +1,16 @@
-/*
-* @Author: Craig Bojko
-* @Date:   2018-01-14 19:34:52
-* @Last Modified by:   Craig Bojko
-* @Last Modified time: 2018-01-15 02:08:07
-*/
+/**
+ * Project: react_navigation_progress
+ * FilePath: /src/app/components/NavigationIcon/navigationIcon.component.jsx
+ * File: navigationIcon.component.jsx
+ * Created Date: Sunday, January 14th 2018, 7:34:52 pm
+ * Author: Craig Bojko
+ * -----
+ * Last Modified: Thu Feb 15 2018
+ * Modified By: Craig Bojko
+ * -----
+ * Copyright (c) 2018 Pixel Ventures Ltd.
+ * ------------------------------------
+ */
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -11,7 +18,7 @@ import classNames from 'classnames'
 
 import styles from './navigationIcon.component.less'
 
-export default class NavigationIcon extends React.Component {
+export class NavigationIcon extends React.Component {
   constructor (props, context) {
     super(props)
     this.state = context.model
