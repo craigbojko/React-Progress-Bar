@@ -1,23 +1,24 @@
-# Moteefe - ReactJS Navigation progress bar
+# ReactJS Navigation progress bar
 
-App was built with node v8.4.0, npm 5.2.0
+App was built with node v9.4.0, npm 5.2.0
 
 # Description
 
-The application will take an environment parameter and map to a predefined fixture to act as an input object to run the algorithm against.
-For example: 
+This is a demo of ReactJS/Redux capabilities - specification is to build a progress bar, similar to those seen within checkout/form funnels to indicate steps required.
+
+The application will display a progress bar rendered by ReactJS. Redux builds a store based on the JSON with app/config.js - min of 2 stages, max of 5. Clicking the 'Next' button or on a progress icon will change the state.
+
+To Develop with Webpack Dev Server:
 ```
-> DRIVER=2 npm run start
-> // output: ENCODED OBJ: {"a":1,"b":2,"self":{"$ref":"$"}}
+> npm run-script bootstrap // Install npm dependancies
+> npm run-script wds
 ```
 
-You can update the fixture files with other circular referenced objects to test (located in /src/fixtures). Simply return an object which wll be run through the algorithm.
+# To build:
 
-# To run:
-
-`npm run bootstrap`
-
-`DRIVER=2 npm run start`
+```
+> npm run build
+```
 
 # Code Style/Assumptions
 
